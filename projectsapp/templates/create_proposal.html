@@ -1,0 +1,20 @@
+{% extends '_public/layouts.html' %}
+
+{% block content %}
+  <div class="card p-4">
+    <form action="" method="POST">
+      {{ form.hidden_tag() }} 
+      <fieldset class="form-group">
+        <legend class="border-bottom pb-2 mb-3">Create Proposal</legend>
+        <div class="form-group">
+          {{ form.proposal_name.label(class="form-control-label") }}
+          {{ form.proposal_name(class="form-control") }}
+        </div>
+        
+      </fieldset>
+        <div class="form-group">
+          {{ form.submit(class="btn btn-outline-info")}}
+        </div>
+    </form>
+  </div>
+{% endblock content %}

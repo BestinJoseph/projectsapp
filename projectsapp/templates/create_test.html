@@ -1,0 +1,40 @@
+{% extends '_public/layouts.html' %}
+
+{% block content %}
+  <div class="card p-4">
+    <form action="" method="POST">
+    {{ form.hidden_tag() }}
+    <fieldset>
+      <legend class="border-bottom pb-3 mb-4">Create Test</legend>
+      <div class="form-group">
+        {{ form.department_id.label(class="form-control-label") }}
+        {{ form.department_id(class="form-control") }}
+      </div>
+      <div class="form-group">
+        {{ form.test_name.label(class="form-control-label") }}
+        {{ form.test_name(class="form-control") }}
+      </div>
+      <div class="form-group">
+        {{ form.test_description.label(class="form-control-label") }}
+        {{ form.test_description(class="form-control") }}
+      </div>
+      <div class="form-group">
+        {{ form.expiration_date.label(class="form-control-label") }}
+        {{ form.expiration_date(class="form-control dp") }}
+      </div>
+    </fieldset>
+    {% if form.errors %}
+      {{ form.errors }}
+    {% endif %}
+    <div class="form-group">
+      {{ form.submit(class="btn btn-outline-info mt-3") }}
+    </div>
+    </form>
+  </div>
+{% endblock content %}
+
+{% block scripts %}
+  {{ super() }}
+  {{ datepicker.loader() }} {# to load jQuery-ui #}
+  {{ datepicker.picker(id=".dp") }}
+{% endblock %}

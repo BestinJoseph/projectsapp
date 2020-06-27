@@ -1,0 +1,25 @@
+{% extends '_public/layouts.html' %}
+
+{% block content %}
+    {% for client in clients %}
+        <div class="card p-3 mb-2">
+            <div class="row px-3">
+                <div class="mr-auto">
+                    <a href="{{ url_for('clients_blueprint.single_client', client_name=client.client_name) }}" class="d-inline-block">{{ client.client_name }}</a>
+                </div>
+                <div class="ml-auto">
+                    <span>T: <a href="#" class="btn_client_menu info">{{ client.projects }}</a></span>
+                    <span>F: <a href="#" class="btn_client_menu success">{{ client.finished }}</a></span>
+                    <span>P: <a href="#" class="btn_client_menu warning">{{ client.progress }}</a></span>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock content %}
+
+{% block sidebar %}
+    <div class="mb-4 card p-3">
+        <a href="{{ url_for('clients_blueprint.create_client') }}" class="btn btn-primary d-block">Create Client</a>
+    </div>
+{% endblock sidebar %}
+

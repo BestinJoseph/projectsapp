@@ -1,0 +1,52 @@
+{% extends '_public/layouts.html' %}
+
+{% block content %}
+    <div class="card p-3">
+        <form method="POST" action="" >
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="border-bottom pb-2 mb-3">Create Project</legend>
+                <div class="form-group">
+                    {{ form.client_id.label(class="form-control-label") }}
+                    {% if form.client_id.errors %}
+                        {{ form.client_id(class="form-control is-invalid") }}
+                        {% for error in form.client_id.errors %}
+                            {{ error }}
+                        {% endfor %}
+                    {% else %}
+                        {{ form.client_id(class="form-control") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.project_name.label(class="form-control-label") }}
+                    {% if form.project_name.errors %}
+                        {{ form.project_name(class="form-control is-invalid") }}
+                        {% for error in form.project_name.errors %}
+                            {{ error }}
+                        {% endfor %}
+                    {% else %}
+                        {{ form.project_name(class="form-control") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.request_reference.label(class="form-control-label") }}
+                    {% if form.request_reference.errors %}
+                        {{ form.request_reference(class="form-control is-invalid") }}
+                        {% for error in form.request_reference.errors %}
+                            {{ error }}
+                        {% endfor %}
+                    {% else %}
+                        {{ form.request_reference(class="form-control") }}
+                    {% endif %}
+                </div>
+            </fieldset>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-outline-info") }}
+            </div>
+        </form>
+    </div>
+{% endblock content %}
+
+{% block sidebar %}
+    
+{% endblock sidebar %}

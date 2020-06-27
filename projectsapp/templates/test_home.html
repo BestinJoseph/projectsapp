@@ -1,0 +1,11 @@
+{% extends '_public/layouts.html' %}
+
+{% block content %}
+  tests home page.
+{% endblock content %}
+
+{% block sidebar %}
+  <div class="mb-4 card p-3">
+        <a href="{{ url_for('test_blueprint.create_test') }}" class="btn btn-primary d-block">Create test</a>
+    </div>
+{% endblock sidebar %}

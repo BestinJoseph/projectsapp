@@ -1,0 +1,17 @@
+{% extends '_public/layouts.html' %}
+
+{% block content %}
+    <div class="card p-3 mb-4">
+        <h1>{{ current_user.username }}</h1>
+    </div>
+    {% for client in current_user.clients %}
+        {{ client.client_name }} <br />
+    {% endfor %}
+    <br />
+    <ul>
+    {% for project in user.projects %}
+        <li>{{ project.project_name }}</li>
+    {% endfor %}
+    </ul>
+    
+{% endblock content %}

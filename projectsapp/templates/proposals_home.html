@@ -1,0 +1,11 @@
+{% extends '_public/layouts.html' %}
+
+{% block content %}
+    welcome to proposal section....
+{% endblock content %}
+
+{% block sidebar %}
+    <div class="mb-4 card p-3">
+        <a href="{{ url_for('proposal_blueprint.create_proposal') }}" class="btn btn-primary d-block">Create proposal</a>
+    </div>
+{% endblock sidebar %}

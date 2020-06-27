@@ -1,0 +1,13 @@
+{% extends '_public/layouts.html' %}
+
+{% block content %}
+    <div class="card p-3 mb-3">
+        <h3>{{ project.project_name }}</h3>
+        <p>{{ project.project_id }}</p>
+        <div class="border-top mt-2 pt-4">
+            {{ project.project_status }}
+        </div>
+    </div>
+        <p>{{ project.user.username }}</p>
+        {{ project.client.client_name }}
+{% endblock content %}

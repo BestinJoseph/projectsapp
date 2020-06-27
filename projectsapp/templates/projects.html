@@ -1,0 +1,16 @@
+{% extends '_public/layouts.html' %}
+
+{% block content %}
+    {{ projects.total }}
+    {% for project in projects %}
+        <div class="card p-3 mb-3">
+            <a href="{{ url_for('projects_blueprint.single_project', project_id=project.project_id) }}">{{ project.project_name }}</a>
+        </div>
+    {% endfor %}
+{% endblock content %}
+
+{% block sidebar %}
+    <div class="mb-4 card p-3">
+        <a href="{{ url_for('projects_blueprint.create_project') }}" class="btn btn-primary d-block">Create Project</a>
+    </div>
+{% endblock sidebar %}
